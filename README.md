@@ -1,6 +1,7 @@
 # JordanMcCord-DevOps-Spring2024
 
-##Author: Jordan McCord
+<h2>Author:<h2>
+Jordan McCord
 
-##Description:
+<h2>Description:<h2>
 A note-taking application that allows users to efficiently manage their notes
