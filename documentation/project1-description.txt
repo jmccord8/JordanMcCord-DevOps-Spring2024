@@ -1,0 +1,71 @@
+Your task in this project is to implement a note taking application. The application should support the following major features:
+
+Adding a note
+Browsing recent notes (ordered by most recently viewed)
+Viewing a note
+Removing a note
+Updating the text of notes
+Adding a topic to notes
+Viewing the list of topics for a note
+Removing topics from notes
+Filtering notes by topic (select a topic and only see notes with that topic)
+A UI wireframe has been provided (see NotesApp.pdf).
+
+TECHNICAL REQUIREMENTS
+
+Your project must be implemented as a maven project.
+Your code must compile. All non-compiling code will receive a 0 for the project.
+Your project should have a UI that matches the provided wireframe (see NotesApp.pdf).
+Your project must adhere to the standard checkstyle configuration for the course (see in-class activities for example). One point deducted per checkstyle warning.
+Your project must achieve a minimum of 90% code coverage with all non-trivial logic outside of codebehind classes fully tested (as discussed during Activity 3). 
+RECOMMENDED APPROACH
+Below is a recommended ordering to approach implementation of the system. You are not required to follow this structure, but it will help guide you through incrementally growing the project to support all features. It is strongly recommended that you create regular backups as you complete each step in case of issues with future steps. You should also submit frequently, after each step is implemented and tested, to ensure that you do not miss the deadline. Late submissions will not be accepted, and no submission before the deadline will result in a 0 for the project.
+
+1 - Base UI Implementation
+    a - implement an fxml for the Home page
+    b - implement an fxml for the Note page
+    c - navigation
+        1 - clicking the + on Home page should go to the Note page
+        2 - Clicking the < button on the Note page should go to the Home page
+2 - Adding a Note
+    a - Implement and test model class(es) to support storing a set of notes where each note has some text and a list of unique topics (a note may not have duplicate topics). Should cover the following functionality:
+        1 - add blank note
+        2 - select note
+        3 - update active note text
+        4 - add topic to note (reports error if topic is duplicate or empty)
+        5 - remove topic from note (reports error if topic does not exist)
+        6 - remove active note (reports error if no note is active)
+    b - Update the Home page to have a set of notes (initially empty) displayed on the page
+    c - Update the Home page to add a new blank note to the set of notes when the + button is pressed, and make that note the active note for the system
+
+3 - Viewing a Note
+    a - Add an event handler to the list of notes to make a note the active note if clicked when it is not already active (i.e., first click makes a note active)
+    b - Update the event handler for the list of notes to load the Note page when the active note is clicked
+    c - Update the Note page to display the information for the active note
+    d - If the Note page is loaded with no active note, then the system should display an error message and return to the Home page
+
+4 - Updating a Note
+    a - Add an event handler to the Textarea on the Note page which updates the text for the active note whenever the Textarea is updated
+
+5 - Adding a Topic
+    a - Implement the + button for the Note page to get a topic from the user (you will need to design the ui for how to get this information from the user)
+    b - Update the active note to add the topic
+    c - if the topic is duplicate warn the user and do not update the active note
+    d - if no topic is provided (e.g., no text is entered by the user) warn the user and do not update the active note
+
+6 - Remove a topic
+    a - Implement the - button on the Note page to remove the selected topic from the active note
+    b - if no topic is selected warn the user and do not update the active note
+
+7 - Removing a note
+    a - Implement the - button on the Home page to remove the selected note
+    b - if no note is selected warn the user and do not update
+
+8 - Displaying topics on the Home page
+    a - Implement and test logic in model classes to retrieve a list of unique topics (scan all notes for topics, and generate a list without duplicates)
+    b - Update Home page to load the list of unique topics in the list of topics displayed
+    c - Update Home page to refresh the list of unique topics when returning from the Note page (via < button)
+
+9 - Filtering notes by topic
+    a - Implement and test logic in the model classes to retrieve a list of notes with a specified topic
+    b - Update the Home page to display a list of notes with the specified topic when a topic is selected from the displayed list of topics
