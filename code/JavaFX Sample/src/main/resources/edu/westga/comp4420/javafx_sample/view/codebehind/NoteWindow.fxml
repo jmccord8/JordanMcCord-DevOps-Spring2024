@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="99.0" minWidth="160.0" prefHeight="471.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.comp4420.javafx_sample.view.codebehind.NoteWindow">
+   <children>
+      <Label layoutX="263.0" layoutY="14.0" text="Note" underline="true">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <ListView fx:id="topicListView" layoutX="358.0" layoutY="98.0" prefHeight="326.0" prefWidth="213.0" />
+      <Button fx:id="addTopicButton" layoutX="466.0" layoutY="59.0" mnemonicParsing="false" onAction="#addTopic" text="+" />
+      <Button fx:id="removeTopicButton" layoutX="501.0" layoutY="59.0" mnemonicParsing="false" onAction="#removeTopic" text="-" />
+      <Label layoutX="404.0" layoutY="58.0" prefHeight="27.0" prefWidth="53.0" text="Topics">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="noteTextArea" layoutX="14.0" layoutY="98.0" prefHeight="326.0" prefWidth="304.0" />
+      <Button fx:id="homeButton" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" text="&lt;" underline="true" />
+      <Button fx:id="saveButton" layoutX="146.0" layoutY="432.0" mnemonicParsing="false" onAction="#saveNote" text="Save" />
+   </children>
+</AnchorPane>
